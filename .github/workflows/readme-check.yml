@@ -1,0 +1,11 @@
+name: readme-check
+on: pull_request
+permissions:
+  contents: read
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: README has a Quick start section
+        run: grep -q '^## Quick start' README.md
